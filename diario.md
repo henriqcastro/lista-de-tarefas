@@ -22,3 +22,15 @@ Deletei os itens da pasta public, e o conteúdo da página page.tsx. No vídeo e
 13:51 05/11/2026
 
 Instalei duas extensões, "Auto close tag" e "Auto rename tag", para fechar e renomear as tags, respectivamente.
+
+16:23 06/11/2026
+
+- Adicionei o projeto ao github
+
+16:38 06/11/2026
+
+- Instalei a biblioteca shadcn.
+
+17:49 06/11/2026
+
+- Adicionei os componentes "button" e "input" da biblioteca.
