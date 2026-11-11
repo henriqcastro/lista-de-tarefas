@@ -20,15 +20,15 @@ const Home = () => {
      <Card className = "w-lg p-2">
         <div className = "flex gap-2">
                <Input placeholder = "Adicionar tarefa"/>
-               <Button variant = "outline" className = "cursor-pointer"><Plus />Cadastrar</Button>
+               <Button variant = "default" className = "cursor-pointer"><Plus />Cadastrar</Button>
         </div>
 
       <Separator />
 
       <div  className = "flex gap-2">
-        <Badge variant="outline" className="cursor-pointer"><Menu />Todos</Badge>
-        <Badge variant="outline" className="cursor-pointer"><Check/>Concluídos</Badge>
-        <Badge variant="outline" className="cursor-pointer"><X/>Não concluídos</Badge>
+        <Badge className="cursor-pointer"><Menu />Todos</Badge>
+        <Badge className="cursor-pointer"><Check/>Concluídos</Badge>
+        <Badge className="cursor-pointer"><X/>Não concluídos</Badge>
       </div>
 
     </Card>     
