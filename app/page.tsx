@@ -31,8 +31,8 @@ const Home = () => {
           <Badge className="cursor-pointer"><Check/>Concluídos</Badge>
           <Badge className="cursor-pointer"><X/>Não concluídos</Badge>
         </div>
-    <div className = "mt-4">
-      <div className = "h-12 flex justify-between items-center border-b border-t">
+    <div className = "mt-2 border-t">
+      <div className = "h-12 flex justify-between items-center border-b">
         <div className = "w-1 h-full bg-green-300"></div>
             
           <p className = "flex-1 px-2">Estudar React</p>
