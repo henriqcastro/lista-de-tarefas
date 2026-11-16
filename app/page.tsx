@@ -18,8 +18,19 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card"
+import { 
+  Dialog, 
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose
+
+} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
@@ -36,7 +47,7 @@ const Home = () => {
         <CardContent>
             <Separator className ="mb-4"/>
             <div className = "flex gap-1 mt-4 mb-4">
-              <Badge variant = "default" className = "cursor-pointer"><Menu />Todos</Badge>
+              <Badge variant = "default" className="cursor-pointer"><Menu />Todos</Badge>
               <Badge variant = "outline" className="cursor-pointer"><Check/>Concluídos</Badge>
               <Badge variant = "outline" className="cursor-pointer"><X/>Não concluídos</Badge>
             </div>
@@ -45,8 +56,37 @@ const Home = () => {
                 <div className = "w-1 h-full bg-green-300"></div>
                 <p className = "flex-1 px-2">Estudar React</p>
                 <div className = "flex items-center gap-2">
-                  <SquarePen size={16} className = "cursor-pointer"/>
-                  <Trash size={16} className = "cursor-pointer"/>
+
+                  <Dialog>
+                    <DialogTrigger render = { <Button variant="outline" className = "border-transparent"/>}><SquarePen size={16} className ="cursor-pointer"/></DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Renomear</DialogTitle>
+                        <Input className = "mt-2" placeholder = "Nova Tarefa"/>
+                      </DialogHeader>
+                      <DialogFooter>
+                        <DialogClose render = {<Button variant="outline">Cancelar</Button>}/>
+                        <Button variant = "default" type="submit">Renomear</Button>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+                  
+                  <Dialog>
+                    <DialogTrigger render = { <Button variant="outline" className = "border-transparent"/>}><Trash size={16} className ="cursor-pointer"/></DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Excluir tarefa</DialogTitle>
+                        <DialogDescription>
+                          Tem certeza de que deseja continuar?
+                        </DialogDescription>
+                      </DialogHeader>
+                      <DialogFooter>
+                        <DialogClose render = {<Button variant="outline">Cancelar</Button>}/>
+                        <Button variant = "default" type="submit">Continuar</Button>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+                                   
                 </div>
               </div> 
           </div>
@@ -55,9 +95,7 @@ const Home = () => {
               <ListChecks size = {13}/>
               <p>Tarefas concluídas (3/3)</p>
             </div>
-            <div>
-              <Button variant = "outline" className = "text-xs"><Trash/>Deletar Tarefas Concluídas</Button>
-            </div>
+ 
           </div>
           <div className = "bg-gray-100 h-2 w-full rounded-2xl mt-4">
             <div className = "bg-blue-600 h-full w-[50%] rounded-2xl" style = {{ width: "50%" }}></div>        
