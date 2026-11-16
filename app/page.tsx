@@ -1,14 +1,5 @@
-import { 
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger 
-} from "@/components/ui/alert-dialog"
+
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -20,21 +11,11 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card"
-import { 
-  Dialog, 
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-  DialogClose
-
-} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import { Plus, Menu, X, Check, SquarePen, Trash, ListChecks, Sigma } from 'lucide-react';
+import { Plus, Menu, X, Check, Trash, ListChecks, Sigma } from 'lucide-react';
+import EditTask from "@/components/edit-task"
+import DeleteTask from '@/components/delete-task'
 
 const Home = () => {
   return (
@@ -56,37 +37,8 @@ const Home = () => {
                 <div className = "w-1 h-full bg-green-300"></div>
                 <p className = "flex-1 px-2">Estudar React</p>
                 <div className = "flex items-center gap-2">
-
-                  <Dialog>
-                    <DialogTrigger render = { <Button variant="outline" className = "border-transparent"/>}><SquarePen size={16} className ="cursor-pointer"/></DialogTrigger>
-                    <DialogContent>
-                      <DialogHeader>
-                        <DialogTitle>Renomear</DialogTitle>
-                        <Input className = "mt-2" placeholder = "Nova Tarefa"/>
-                      </DialogHeader>
-                      <DialogFooter>
-                        <DialogClose render = {<Button variant="outline">Cancelar</Button>}/>
-                        <Button variant = "default" type="submit">Renomear</Button>
-                      </DialogFooter>
-                    </DialogContent>
-                  </Dialog>
-                  
-                  <Dialog>
-                    <DialogTrigger render = { <Button variant="outline" className = "border-transparent"/>}><Trash size={16} className ="cursor-pointer"/></DialogTrigger>
-                    <DialogContent>
-                      <DialogHeader>
-                        <DialogTitle>Excluir tarefa</DialogTitle>
-                        <DialogDescription>
-                          Tem certeza de que deseja continuar?
-                        </DialogDescription>
-                      </DialogHeader>
-                      <DialogFooter>
-                        <DialogClose render = {<Button variant="outline">Cancelar</Button>}/>
-                        <Button variant = "default" type="submit">Continuar</Button>
-                      </DialogFooter>
-                    </DialogContent>
-                  </Dialog>
-                                   
+                  <EditTask/>
+                  <DeleteTask/>                 
                 </div>
               </div> 
           </div>
