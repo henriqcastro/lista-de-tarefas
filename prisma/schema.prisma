@@ -8,22 +8,12 @@ generator client {
   output   = "../app/generated/prisma"
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  posts Post[]
-}
-
 datasource db {
   provider = "postgresql"
 }
 
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [id])
-  authorId  Int
+model Tasks {
+  id        String     @id @default(cuid())
+  task     String
+  done   Boolean
 }
